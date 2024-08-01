@@ -7,8 +7,8 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+            background: linear-gradient(135deg, #ff6b6b, #f06595);
+            color: #fff;
             text-align: center;
             margin: 0;
             padding: 0;
@@ -16,28 +16,50 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            overflow: hidden;
         }
         .container {
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease-in-out;
         }
         h1 {
-            color: #28a745;
+            color: #2453af;
             font-size: 2.5em;
             margin: 0;
+            animation: slideIn 1s ease-out;
         }
         p {
-            color: #555;
+            color: #333;
             font-size: 1.2em;
+            margin-top: 10px;
+            animation: fadeIn 2s ease-in-out 0.5s;
+        }
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <img src="https://images.daznservices.com/di/library/DAZN_News/fe/4/2022-10-23-verstappen-red-bull-f1-formula-1_1rzb0l0g9v12w1kukdf68pnibr.jpg?t=115237028" alt="Image of Apache 2">
         <h1>Apache - Load Balancer 2</h1>
         <p>Welcome to the second Apache server in the load-balanced setup.</p>
+        <p>Made by <b>Byron Serrano</b> - Software PUCEM</p>
     </div>
 </body>
 </html>
