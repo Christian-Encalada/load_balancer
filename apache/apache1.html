@@ -1,65 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apache 1 Server</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #6e8efb, #a777e3);
-            color: #fff;
-            text-align: center;
-            margin: 0;
-            padding: 0;
+            background: #bed4e9;
+            color: #343a40;
+            font-family: 'Roboto', sans-serif;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            overflow: hidden;
-        }
-        .container {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            animation: fadeIn 2s ease-in-out;
-        }
-        h1 {
-            color: #4b008d;
-            font-size: 2.5em;
             margin: 0;
-            animation: slideIn 1s ease-out;
         }
-        p {
-            color: #333;
-            font-size: 1.2em;
-            margin-top: 10px;
-            animation: fadeIn 2s ease-in-out 0.5s;
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            background: #fff;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        img {
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #72adec, #6219d8);
+            color: #f1ebeb;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            padding: 20px 0;
+        }
+
+        .card-body {
+            text-align: center;
+        }
+
+        .card img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 20px;
+            border: 5px solid #fff;
+            animation: bounceIn 1.5s;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+
+        .btn-primary {
+            background-color: #6610f2;
+            border: none;
+            animation: fadeIn 2s;
         }
-        @keyframes slideIn {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        .floating-img {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #fff;
+        }
+
+        .img-1 {
+            top: 10px;
+            left: 10px;
+        }
+
+        .img-2 {
+            top: 10px;
+            right: 10px;
+        }
+
+        .img-3 {
+            bottom: 10px;
+            left: 10px;
+        }
+
+        .img-4 {
+            bottom: 10px;
+            right: 10px;
+        }
+
+        #onePieceText {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #6219d8;
+            animation: fadeIn 2s;
         }
     </style>
 </head>
+
 <body>
-    <div class="container">
-        <img src="https://img.remediosdigitales.com/7641cf/hamilton-portugal-f1-2020-2/450_1000.jpg" alt="Image of Apache 1">
-        <h1>Apache - Load Balancer 1</h1>
-        <p>Welcome to the first Apache server in the load-balanced setup.</p>
-        <p>Made by <b>Byron Serrano</b> - Software PUCEM</p>
+    <div class="card text-center animate__animated animate__fadeIn">
+        <div class="card-header">
+            <h1 class="my-3 animate__animated animate__slideInDown">Apache -  Balanceo de carga 1 ⚖️</h1>
+        </div>
+        <div class="card-body">
+            <img src="https://i.imgur.com/ipUmDME.png" alt="Image of Apache 1" class="animate__animated animate__zoomIn">
+            <p class="mt-3 animate__animated animate__fadeIn animate__delay-1s"> Esta el la primer server de apache con balanceo de carga ⚖️.</p>
+            <p class="animate__animated animate__fadeIn animate__delay-2s">Made by <b>Christian Saraguro Encalada</b> - Ing. Software PUCEM</p>
+            <button id="actionButton" class="btn btn-primary animate__animated animate__pulse animate__infinite">Pulsar aquí</button>
+            <div id="onePieceText" class="animate__animated" style="display: none;">One Piece</div>
+        </div>
     </div>
+    <footer class="animate__animated animate__fadeInUp">
+        &copy; 2024 Christian Saraguro Encalada. All rights reserved.
+    </footer>
+    <img src="https://i.imgur.com/bWb7ptD.png" alt="Floating Image" class="floating-img img-1 animate__animated animate__bounceIn">
+    <img src="https://i.imgur.com/bWb7ptD.png" alt="Floating Image" class="floating-img img-2 animate__animated animate__bounceIn">
+    <img src="https://i.imgur.com/bWb7ptD.png" alt="Floating Image" class="floating-img img-3 animate__animated animate__bounceIn">
+    <img src="https://i.imgur.com/bWb7ptD.png" alt="Floating Image" class="floating-img img-4 animate__animated animate__bounceIn">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('actionButton').addEventListener('click', function () {
+            var onePieceText = document.getElementById('onePieceText');
+            onePieceText.style.display = 'block';
+            onePieceText.classList.add('animate__fadeIn');
+        });
+    </script>
 </body>
+
 </html>
